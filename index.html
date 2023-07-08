@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Trailing Newline Removal</title>
+  <script>
+    function removeTrailingNewlines() {
+      var textbox = document.getElementById("textbox");
+      var text = textbox.value;
+      console.log("text:", text)
+
+      const cleanText = text.replace(/(?<!\.\n)\n/g, '');
+
+      console.log("cleanText:", cleanText); // デバッグ用のコンソール出力
+
+      textbox.value = cleanText;
+    }
+  </script>
+</head>
+<body>
+  <textarea id="textbox" rows="5" cols="50"></textarea>
+  <br>
+  <button type="button" onclick="removeTrailingNewlines()">Remove Trailing Newlines</button>
+</body>
+</html>
